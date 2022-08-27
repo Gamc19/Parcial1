@@ -1,0 +1,70 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Usuario;
+
+/**
+ *
+ * @author gustavomoreno
+ */
+public class Paciente extends Usuario  {
+    private double peso, altura;
+    private String cumpleaños, sangre;
+    
+public Paciente (double peso, double altura, String cumpleaños, String sangre){
+        
+            
+        this.peso=peso;    
+        this.altura=altura;
+        this.cumpleaños=cumpleaños;
+        this.sangre=sangre;        
+    }    
+
+    public Paciente(int ID, String nombre, String correo, String direccion, String telefono){
+        
+        super(ID, nombre, correo, direccion, telefono);
+
+} 
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public String getCumpleaños() {
+        return cumpleaños;
+    }
+
+    public void setCumpleaños(String cumpleaños) {
+        this.cumpleaños = cumpleaños;
+    }
+
+    public String getSangre() {
+        return sangre;
+    }
+
+    public void setSangre(String sangre) {
+        this.sangre = sangre;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Paciente{" + "peso=" + peso + ", altura=" + altura + ", cumplea\u00f1os=" + cumpleaños + ", sangre=" + sangre + '}';
+    }
+
+    
+    
+
+}
