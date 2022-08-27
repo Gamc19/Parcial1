@@ -173,6 +173,7 @@ public class Hospital {
             
             Enfermero enfermero = new Enfermero (ID, nombre, correo, direccion, telefono);
             
+            enfermero.setEspecialidad(especialidad);
   
             
             listaUsuarios.add(enfermero);
@@ -214,7 +215,7 @@ public class Hospital {
             
             Doctor doctor = new Doctor (ID, nombre, correo, direccion, telefono);
             
-  
+            doctor.setEspecialidad(especialidad);
             
             listaUsuarios.add(doctor);
             System.out.println("1. Desea iniciar un nuevo registro");
