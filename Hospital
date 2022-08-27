@@ -1,0 +1,241 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package hospital;
+
+import Usuario.Paciente;
+import Usuario.Doctor;
+import Usuario.Enfermero;
+import Usuario.Usuario;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author gustavomoreno
+ */
+public class Hospital {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    ArrayList<Usuario> listaUsuarios;
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int opcion;
+        Hospital user = new Hospital();
+        
+        user.listaUsuarios=new ArrayList ();
+        
+        Scanner scan = new Scanner (System.in);
+        
+        do{
+            System.out.println("Sistema de Registro Hospitalario La Paz");
+            System.out.println("1. Registrar Usuario");
+            System.out.println("2. Registrar Paciente");
+            System.out.println("3. Registrar Enfermero o Enfermera");
+            System.out.println("4. Registrar Doctor");
+            System.out.println("5. Mostrar Listado");
+            System.out.println("6. Salir");
+            System.out.println("Ingrese el Número de la Opción Solicitada");
+            opcion= scan.nextInt();
+            switch (opcion) {
+                case 1:
+                    user.registroUsuario();
+                    break;
+                case 2:
+                    user.registroPaciente();
+                    break;
+                case 3:
+                    user.registroEnfermero();
+                    break;
+                case 4:
+                    user.registroDoctor();
+                    break;                        
+                case 5:
+                    user.mostrarRegistro();
+                    break;    
+
+            }
+        }while (opcion !=6);
+        
+    }  
+       public void registroUsuario(){
+          int opcion2=0;
+            do{
+
+            int ID;
+            String nombre, correo, direccion, telefono;
+            Scanner scan = new Scanner (System.in);
+            
+            System.out.println("Ingresa el ID");
+            ID=scan.nextInt();
+            System.out.println("Ingrese el Nombre");
+            nombre=scan.next();
+            System.out.println("Ingrese el Correo");
+            correo=scan.next();
+            System.out.println("Ingrese la Dirección");
+            direccion=scan.next();
+            System.out.println("Ingrese el Telefono");
+            telefono=scan.next();
+
+            
+            Usuario Usuario = new Usuario (ID, nombre, correo, direccion, telefono)  ;
+            
+            listaUsuarios.add(Usuario);
+            System.out.println("1. Desea iniciar un nuevo registro");
+            System.out.println("2. Regresar al menu anterior");
+            System.out.println("Ingrese el Número de la Opción Deseada");
+            opcion2 =scan.nextInt();
+            
+            }while(opcion2!=2);
+            
+       }   
+       
+          public void registroPaciente(){
+          int opcion2=0;
+            do{
+
+            int ID;
+            String nombre, correo, direccion, telefono;
+            double peso, altura;
+            String cumpleaños, sangre;
+            
+            Scanner scan = new Scanner (System.in);
+            
+            System.out.println("Ingresa el ID");
+            ID=scan.nextInt();
+            System.out.println("Ingrese el Nombre");
+            nombre=scan.next();
+            System.out.println("Ingrese el Correo");
+            correo=scan.next();
+            System.out.println("Ingrese la Dirección");
+            direccion=scan.next();
+            System.out.println("Ingrese el Telefono");
+            telefono=scan.next();
+            System.out.println("Ingrese el Peso");
+            peso=scan.nextDouble();
+            System.out.println("Ingrese la Altura");
+            altura=scan.nextDouble();
+            System.out.println("Ingrese el Cumpleaños");
+            cumpleaños=scan.next();
+            System.out.println("Ingrese el Tipo de Sangre");
+            sangre=scan.next();
+
+            
+            Paciente paciente = new Paciente (ID, nombre, correo, direccion, telefono) ;
+            
+            paciente.setPeso(peso);
+            paciente.setAltura(altura);
+            paciente.setCumpleaños(cumpleaños);
+            paciente.setSangre(sangre);
+            
+            listaUsuarios.add(paciente);
+            System.out.println("1. Desea iniciar un nuevo registro");
+            System.out.println("2. Regresar al menu anterior");
+            System.out.println("Ingrese el Número de la Opción Deseada");
+            opcion2 =scan.nextInt();
+            
+            }while(opcion2!=2);
+              
+       }   
+       
+          
+    
+          public void registroEnfermero(){
+          int opcion2=0;
+            do{
+
+            int ID;
+            String nombre, correo, direccion, telefono;
+            String especialidad;
+            
+            Scanner scan = new Scanner (System.in);
+            
+            System.out.println("Ingresa el ID");
+            ID=scan.nextInt();
+            System.out.println("Ingrese el Nombre");
+            nombre=scan.next();
+            System.out.println("Ingrese el Correo");
+            correo=scan.next();
+            System.out.println("Ingrese la Dirección");
+            direccion=scan.next();
+            System.out.println("Ingrese el Telefono");
+            telefono=scan.next();
+            System.out.println("Ingrese la Especialidad");
+            especialidad=scan.next();
+  
+
+
+            
+            Enfermero enfermero = new Enfermero (ID, nombre, correo, direccion, telefono);
+            
+  
+            
+            listaUsuarios.add(enfermero);
+            System.out.println("1. Desea iniciar un nuevo registro");
+            System.out.println("2. Regresar al menu anterior");
+            System.out.println("Ingrese el Número de la Opción Deseada");
+            opcion2 =scan.nextInt();
+            
+            }while(opcion2!=2);
+              
+       }
+          
+          
+         public void registroDoctor(){
+          int opcion2=0;
+            do{
+
+            int ID;
+            String nombre, correo, direccion, telefono;
+            String especialidad;
+            
+            Scanner scan = new Scanner (System.in);
+            
+            System.out.println("Ingresa el ID");
+            ID=scan.nextInt();
+            System.out.println("Ingrese el Nombre");
+            nombre=scan.next();
+            System.out.println("Ingrese el Correo");
+            correo=scan.next();
+            System.out.println("Ingrese la Dirección");
+            direccion=scan.next();
+            System.out.println("Ingrese el Telefono");
+            telefono=scan.next();
+            System.out.println("Ingrese la Especialidad");
+            especialidad=scan.next();
+  
+
+
+            
+            Doctor doctor = new Doctor (ID, nombre, correo, direccion, telefono);
+            
+  
+            
+            listaUsuarios.add(doctor);
+            System.out.println("1. Desea iniciar un nuevo registro");
+            System.out.println("2. Regresar al menu anterior");
+            System.out.println("Ingrese el Número de la Opción Deseada");
+            opcion2 =scan.nextInt();
+            
+            }while(opcion2!=2);
+              
+       }               
+                
+             public void mostrarRegistro(){
+                if (!listaUsuarios.isEmpty()){
+                    for (Usuario usuarios : listaUsuarios){
+                    System.out.println(usuarios);
+                }
+                
+            }else{
+                System.out.println("Usted No Ha registrado Ningun Usuario");
+            }
+        }   
+
+}
+    
